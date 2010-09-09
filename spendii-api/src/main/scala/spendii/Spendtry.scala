@@ -8,6 +8,8 @@ package spendii
  * Have chosen not to make this a case class because we need to return an Option[Spendtry] on creation.
  * We can't have a case class as well as an object with an apply method as the constructor of the case class
  * and the apply method clash.
+ *
+ * We also want to define our own equals and hashCode methods. This further adds to the rational to make it a vanilla class.
  */
 final class Spendtry private(val tags:Seq[String], val cost:Double, val description:String) {
 
@@ -20,6 +22,7 @@ final class Spendtry private(val tags:Seq[String], val cost:Double, val descript
     }
   }
 
+  //Use all fields of the hashCode, but use sorted order for the tags, cost as is and lowerCase hashCode for the description.
   override def hashCode: Int =  {
     val tagHashCode = tags.sorted.hashCode
     (41 * (41 * (41 + tagHashCode)) + cost.hashCode) + description.toLowerCase.hashCode

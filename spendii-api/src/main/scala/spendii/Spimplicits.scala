@@ -12,11 +12,6 @@ import date.{RichSdate, Sdate}
  */
 object Spimplicits {
 
-  /**
-   * Converts Sdate to RichSdate for Range-like functionality.
-   */
-  implicit def sDateToRichSdate(startDate:Sdate) : RichSdate = new RichSdate(startDate)
-
   implicit def seqToString(tags:Seq[String]) : String = tags.mkString(",")
 
   /**
