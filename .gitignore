@@ -1,0 +1,9 @@
+project/boot/
+project/build/target/
+spendii-api/lib_managed/
+spendii-api/target/
+spendii-examples/lib_managed/
+spendii-examples/target/
+spendii-persist/lib_managed/
+spendii-persist/target/
+target/
