@@ -1,0 +1,5 @@
+1. Make all searches case-insensitive.
+  - Label
+  - User
+  - Spendtries
+2. When a user is deleted, all his/her spends are deleted.
