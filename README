@@ -6,11 +6,9 @@ workings of Scala than to provide a comprehensive personal finance API.
 
 Spendii is built using SBT. Please have a look @ the SBT website for instructions on how to install it -> http://code.google.com/p/simple-build-tool/wiki/DocumentationHome
 
-Once SBT is install simply run:
+Once SBT is installed simpy run:
 
-update
-clean
-test
+;update;clean;test
 
 to verify that everything compiles and that the tests pass.
 
