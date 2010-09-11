@@ -72,7 +72,7 @@ trait Sdate extends Ordered[Sdate] {
   }
 
   /**
-   * Copies the state of this Sdates Cal into the supplied newCal.
+   * Copies the state of this Sdate's Cal into the supplied newCal.
    */
   def ->>(newCal:Cal) {
     newCal.set(DAY_OF_MONTH, cal.get(DAY_OF_MONTH))
