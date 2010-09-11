@@ -44,10 +44,19 @@ object Spendtry {
 
   //tags are stored as lowercase but in order-of-addition.
   //descriptions are stored as is.
-  def apply(tags:String, cost:Double, description:String) : Option[Spendtry] = {
+  def apply(tags:String, cost:Double, description:String): Option[Spendtry] = {
     val processedTags = tags.split(",").map(_.trim).filterNot(_.isEmpty).map(_.toLowerCase).toSeq
     if (!processedTags.isEmpty && cost > 0) Some(new Spendtry(processedTags, cost, description)) else None
   }
 
-  def apply(tags:String, cost:Double) : Option[Spendtry] = apply(tags, cost, defaultDescription)
+  def apply(tags:String, cost:Double): Option[Spendtry] = apply(tags, cost, defaultDescription)  
+  
+  def apply(tags:Seq[String], cost:Double): Option[Spendtry] = apply(seqToString(tags), cost)
+  
+  def apply(tags:Seq[String], cost:Double, description:String): Option[Spendtry] = apply(seqToString(tags), cost, description)
+  
+  //We can't make this an implicit as there is some compiler magic-breakdown when we do. Also if you comment out this method
+  //everything compiles but tests that use these methods fail to pass. I suspect that this has something to do with the
+  //constructor scope of the Spentry class clashing with this object's apply methods.
+  private def seqToString(tags:Seq[String]) : String = tags.mkString(",")
 }

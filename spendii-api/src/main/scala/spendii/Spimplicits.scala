@@ -11,9 +11,7 @@ import date.{RichSdate, Sdate}
  * Contains all implicit conversions for Spendii.
  */
 object Spimplicits {
-
-  implicit def seqToString(tags:Seq[String]) : String = tags.mkString(",")
-
+  
   /**
    * Converts an Int -> DayMonth -> Sdate.
    * Eg. 10 | january | 2010 -> Sdate

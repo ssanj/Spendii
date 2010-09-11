@@ -7,7 +7,6 @@ package spendii.persist.memory
 import spendii.persist.DailySpendDao.DailySpendByUser
 import spendii.persist._
 import spendii.{Spendtry}
-import spendii.Spimplicits.seqToString
 
 trait InMemLabelDao extends LabelDao { this:DailySpendDao with UserDao =>
 
