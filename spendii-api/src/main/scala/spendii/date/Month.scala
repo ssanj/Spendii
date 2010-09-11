@@ -9,35 +9,35 @@ import java.util.{Calendar => Cal}
 /**
  * Defines a month in a date as its own type.
  */
-sealed abstract class Month(private[date] val month: Int)
+sealed abstract class Month(private[date] val month:Int)
 
-case class January() extends Month(Cal.JANUARY)
-case class February() extends Month(Cal.FEBRUARY)
-case class March() extends Month(Cal.MARCH)
-case class April() extends Month(Cal.APRIL)
-case class May() extends Month(Cal.MAY)
-case class June() extends Month(Cal.JUNE)
-case class July() extends Month(Cal.JULY)
-case class August() extends Month(Cal.AUGUST)
-case class September() extends Month(Cal.SEPTEMBER)
-case class October() extends Month(Cal.OCTOBER)
-case class November() extends Month(Cal.NOVEMBER)
-case class December() extends Month(Cal.DECEMBER)
+final case object January extends Month(Cal.JANUARY)
+final case object February extends Month(Cal.FEBRUARY)
+final case object March extends Month(Cal.MARCH)
+final case object April extends Month(Cal.APRIL)
+final case object May extends Month(Cal.MAY)
+final case object June extends Month(Cal.JUNE)
+final case object July extends Month(Cal.JULY)
+final case object August extends Month(Cal.AUGUST)
+final case object September extends Month(Cal.SEPTEMBER)
+final case object October extends Month(Cal.OCTOBER)
+final case object November extends Month(Cal.NOVEMBER)
+final case object December extends Month(Cal.DECEMBER)
 
 object Month {
 
-  def january = January()
-  def february = February()
-  def march = March()
-  def april = April()
-  def may = May()
-  def june = June()
-  def july = July()
-  def august = August()
-  def september = September()
-  def october = October()
-  def november = November()
-  def december = December()
+  def january = January
+  def february = February
+  def march = March
+  def april = April
+  def may = May
+  def june = June
+  def july = July
+  def august = August
+  def september = September
+  def october = October
+  def november = November
+  def december = December
 
   def getMonth(month:Int) : Option[Month] = {
     month match {

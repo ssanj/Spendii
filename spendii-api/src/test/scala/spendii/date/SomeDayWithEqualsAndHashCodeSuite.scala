@@ -13,6 +13,6 @@ final class SomeDayWithEqualsAndHashCodeSuite extends ScalaTestSuite with Equals
 
   override def objectName = "SomeDay"
 
-  override val equalObjects = Seq(SomeDay(1, january, 2004), SomeDay(1, January(), 2004), SomeDay(1, January(), 2004))
+  override val equalObjects = Seq(SomeDay(1, january, 2004), SomeDay(1, January, 2004), SomeDay(1, January, 2004))
   override val differentObjects = Seq(SomeDay(27, september, 2007), SomeDay(25, december, 2008))
 }

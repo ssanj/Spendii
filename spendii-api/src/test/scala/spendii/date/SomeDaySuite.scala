@@ -22,16 +22,16 @@ final class SomeDaySuite extends ScalaTestSuite {
   test("SomeDay should return the date for yesterday") { (yesterday ->) should equal (getYesterdaysDate) }
 
   test("SomeDay should create a specific days") {
-    assertDay(SomeDay(10, January(), 2009), 10, JANUARY, 2009)
-    assertDay(SomeDay(11, July(), 2006), 11, JULY, 2006)
+    assertDay(SomeDay(10, January, 2009), 10, JANUARY, 2009)
+    assertDay(SomeDay(11, July, 2006), 11, JULY, 2006)
   }
 
   test("SomeDay should convert to a Java Date") {
-    (SomeDay(10, October(), 2010) ->) should equal (createJavaDateWithouTtime(10, OCTOBER, 2010))
+    (SomeDay(10, October, 2010) ->) should equal (createJavaDateWithouTtime(10, OCTOBER, 2010))
   }
 
   test("SomeDay should clone its Calendars state") {
-    val day = SomeDay(11, November(), 2008)
+    val day = SomeDay(11, November, 2008)
     val newCal = Cal.getInstance
     day ->> newCal
     assertCal(newCal, 11, NOVEMBER, 2008)
