@@ -4,7 +4,14 @@ Spendii
 Spendii is a simple personal finance API written in Scala. Spendii was written more to tease out the
 workings of Scala than to provide a comprehensive personal finance API.
 
-Spendii is built using SBT. Please have a look @ the SBT website for instructions on how to install it -> http://code.google.com/p/simple-build-tool/wiki/DocumentationHome
+Goals:
+
+1. A create simple scala API.
+2. Provide the ability to "swap" persistent stores. Eg. JPA, SQL, NoSql, Other.
+
+
+Spendii is built using SBT. 
+Please have a look @ the SBT website for instructions on how to install it -> http://code.google.com/p/simple-build-tool/wiki/DocumentationHome
 
 Once SBT is installed simpy run:
 
