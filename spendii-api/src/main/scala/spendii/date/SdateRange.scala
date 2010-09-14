@@ -7,9 +7,7 @@ package spendii.date
 /**
  * A simple date range with both startDate and endDate inclusive. If startDate is after endDate, they are switched.
  */
-final class SdateRange private (_startDate:Sdate, _endDate:Sdate) extends Iterator[Option[Sdate]] {
-  val startDate:Sdate = if (_startDate > _endDate) _endDate else _startDate
-  val endDate:Sdate = if (_endDate < _startDate) _startDate else _endDate
+final class SdateRange private (val startDate:Sdate, val endDate:Sdate) extends Iterator[Option[Sdate]] {
   var indexDate:Sdate = startDate
 
   override def hasNext: Boolean = indexDate <= endDate
@@ -22,11 +20,11 @@ final class SdateRange private (_startDate:Sdate, _endDate:Sdate) extends Iterat
     } else None
   }
 
-  private def inc(date:Sdate) : (Sdate,Sdate) =  (date + 1, date)
+  private def inc(date:Sdate): (Sdate,Sdate) =  (date + 1, date)
 
   override def hashCode = startDate.hashCode + endDate.hashCode
 
-  def contains(date:Sdate) : Boolean =  (date >= startDate && date <= endDate)
+  def contains(date:Sdate): Boolean =  (date >= startDate && date <= endDate)
 
   override def equals(that:Any) =
     that match {
