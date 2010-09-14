@@ -7,9 +7,8 @@ package spendii
 import org.scalatest.FunSuite
 import org.scalatest.matchers.ShouldMatchers
 import spendii.date.Sdate._
-import spendii.Spimplicits._
 
-sealed class DailySpendWithAdditionsSuite extends FunSuite with ShouldMatchers {
+final class DailySpendWithAdditionsSuite extends FunSuite with ShouldMatchers {
 
   test("A DailySpend should add supplied spendtries one at a time") {
     val sp1 = Spendtry("groceries", 30)

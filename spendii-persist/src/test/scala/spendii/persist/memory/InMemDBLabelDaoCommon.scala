@@ -9,7 +9,6 @@ import org.scalatest.matchers.ShouldMatchers
 import spendii.date.Month.{july, august}
 import spendii.persist.{DailySpendDao}
 import spendii.persist.DailySpendDao.{UserDate}
-import spendii.Spimplicits._
 import spendii._
 import spendii.date.Sdate._
 

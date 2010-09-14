@@ -8,7 +8,6 @@ import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.FunSuite
 import spendii.date.Sdate._
 import spendii.persist.DailySpendDao.{UserDate, DailySpendByUser}
-import spendii.Spimplicits._
 import spendii._
 
 trait CommonBoundary extends FunSuite with ShouldMatchers {

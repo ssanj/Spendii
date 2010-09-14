@@ -6,7 +6,6 @@ package spendii
 
 import org.scalatest.FunSuite
 import org.scalatest.matchers.ShouldMatchers
-import Spimplicits._
 import Spendtry._
 
 sealed class SpendtySuite extends FunSuite with ShouldMatchers {

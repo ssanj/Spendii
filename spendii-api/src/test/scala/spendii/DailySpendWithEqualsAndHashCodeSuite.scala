@@ -6,7 +6,6 @@ package spendii
 
 import date.Sdate._
 import date.Month._
-import Spimplicits._
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.{TestFailedException, BeforeAndAfterAll, BeforeAndAfterEach, FunSuite}
 import util.EqualsAndHashCodeConstraints._

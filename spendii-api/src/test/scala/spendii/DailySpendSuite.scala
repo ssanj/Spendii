@@ -4,11 +4,9 @@
  */
 package spendii
 
-import spendii.date.{SomeDay, Sdate}
+import spendii.date.Sdate
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.FunSuite
-import Spimplicits._
-import spendii.date.Sdate._
 import spendii.date.Month.october
 import DailySpend._
 

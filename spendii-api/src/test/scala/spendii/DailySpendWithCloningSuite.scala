@@ -7,10 +7,9 @@ package spendii
 import org.scalatest.FunSuite
 import org.scalatest.matchers.ShouldMatchers
 import date.Sdate._
-import Spimplicits._
 import util.IfSomeElseNone._
 
-sealed class DailySpendWithCloningSuite extends FunSuite with ShouldMatchers {
+final class DailySpendWithCloningSuite extends FunSuite with ShouldMatchers {
 
   test("A DailySpend should return a clone that is not the same instance as itself"){
     val sp1 = Spendtry("lunch", 17).get

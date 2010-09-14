@@ -9,7 +9,6 @@ import spendii.persist.{UserDoesNotExistException, UserDao, LabelDao, DailySpend
 import spendii.date.{SdateRange, Sdate}
 import spendii.util.IfSomeElseNone._
 import spendii.persist.DailySpendDao.{UserDateRange, DailySpendByUser, UserDate}
-import spendii.Spimplicits._
 import spendii._
 
 trait InMemDailySpendDao extends DailySpendDao { this:LabelDao with UserDao =>
