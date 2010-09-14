@@ -40,7 +40,7 @@ object SomeDay {
     }
   }
 
-  private def applyChange(date:Sdate, days:Int, op:(Int, Int) => Int): SomeDay = {
+  private def applyChange(date:Sdate, days:Int, op:(Int, Int) => Int): Sdate = {
     val decDateFunc = (newCal: Cal) => {
       date ->> newCal
       changeDays(days)(newCal)(op)
