@@ -4,7 +4,7 @@
  */
 package spendii
 
-import date.SomeDay._
+import date.Sdate._
 import date.Month._
 import Spimplicits._
 import org.scalatest.matchers.ShouldMatchers

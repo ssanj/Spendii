@@ -4,10 +4,9 @@
  */
 package spendii.date
 
-import spendii.Spimplicits.dayToDayMonth
 import spendii.util.ScalaTestSuite
-import SomeDay._
 import Month._
+import Sdate._
 
 final class SomeDayWithDifferenceInDaysSuite extends ScalaTestSuite {
 

@@ -5,13 +5,13 @@
 package spendii.date
 
 import spendii.util.ScalaTestSuite
-import SomeDay._
+import Sdate._
 
 final class SomeDayWithOrderedSuite extends ScalaTestSuite {
 
-  test("SomeDay should order ealier days first") { (yesterday compare today) should equal (-1) }
+  test("Sdate should order ealier days first") { (yesterday compare today) should equal (-1) }
 
-  test("SomeDay should order equal days together") { (today compare today) should equal (0) }
+  test("Sdate should order equal days together") { (today compare today) should equal (0) }
 
-  test("SomeDay should order later days last") { (today compare yesterday) should equal (1) }
+  test("Sdate should order later days last") { (today compare yesterday) should equal (1) }
 }

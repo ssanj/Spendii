@@ -7,7 +7,7 @@ package spendii
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.FunSuite
 import Spimplicits._
-import date.SomeDay.today
+import date.Sdate._
 
 final class DailySpendWithFilterSuite extends FunSuite with ShouldMatchers {
 

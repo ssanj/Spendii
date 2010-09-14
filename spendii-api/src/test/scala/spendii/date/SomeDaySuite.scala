@@ -6,38 +6,37 @@ package spendii.date
 
 import java.util.{Calendar => Cal, Date}
 import Cal._
-import SomeDay._
 import spendii.util.ScalaTestSuite
 import Month._
-import spendii.Spimplicits.dayToDayMonth
+import Sdate._
 
 final class SomeDaySuite extends ScalaTestSuite {
 
-  test("SomeDay should have a formatted toString representation") {
+  test("Sdate should have a formatted toString representation") {
    (25|december|2008).toString should equal ("Thursday 25 December 2008")
   }
 
-  test("SomeDay should return the date for today") { (today ->) should equal (getTodaysDate) }
+  test("Sdate should return the date for today") { (today ->) should equal (getTodaysDate) }
 
-  test("SomeDay should return the date for yesterday") { (yesterday ->) should equal (getYesterdaysDate) }
+  test("Sdate should return the date for yesterday") { (yesterday ->) should equal (getYesterdaysDate) }
 
-  test("SomeDay should create a specific days") {
-    assertDay(SomeDay(10, January, 2009), 10, JANUARY, 2009)
-    assertDay(SomeDay(11, July, 2006), 11, JULY, 2006)
+  test("Sdate should create a specific days") {
+    assertDay(Sdate(10, January, 2009), 10, JANUARY, 2009)
+    assertDay(Sdate(11, July, 2006), 11, JULY, 2006)
   }
 
-  test("SomeDay should convert to a Java Date") {
-    (SomeDay(10, October, 2010) ->) should equal (createJavaDateWithouTtime(10, OCTOBER, 2010))
-  }
+  test("Sdate should convert to a Java Date") {
+    (Sdate(10, October, 2010) ->) should equal (createJavaDateWithouTtime(10, OCTOBER, 2010))
+ }
 
-  test("SomeDay should clone its Calendars state") {
-    val day = SomeDay(11, November, 2008)
+  test("Sdate should clone its Calendars state") {
+    val day = Sdate(11, November, 2008)
     val newCal = Cal.getInstance
     day ->> newCal
     assertCal(newCal, 11, NOVEMBER, 2008)
   }
 
-  private def getTodaysCal: Cal = {
+ private def getTodaysCal: Cal = {
     val cal = Cal.getInstance
     cal.set(HOUR, 0)
     cal.set(MINUTE, 0)

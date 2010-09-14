@@ -6,8 +6,8 @@ package spendii.date
 
 import spendii.util.ScalaTestSuite
 import spendii.util.EqualsAndHashCodeConstraints.{StrictHashCodeConstraints, EqualsConstraints}
-import spendii.Spimplicits.dayToDayMonth
 import Month._
+import Sdate._
 
 final class SdateRangeWithEqualsAndHashCodeSuite extends ScalaTestSuite
         with EqualsConstraints[SdateRange] with StrictHashCodeConstraints[SdateRange] {

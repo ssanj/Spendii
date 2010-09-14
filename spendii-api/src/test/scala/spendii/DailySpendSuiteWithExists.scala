@@ -6,7 +6,7 @@ package spendii
 
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.FunSuite
-import spendii.date.SomeDay._
+import spendii.date.Sdate._
 
 final class DailySpendSuiteWithExists extends FunSuite with ShouldMatchers {
 

@@ -6,7 +6,7 @@ package spendii
 
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.FunSuite
-import date.SomeDay._
+import date.Sdate._
 sealed class DailySpendWithDeletionsSuite extends FunSuite with ShouldMatchers {
 
   test("A DailySpend should delete specified existing spendtries"){

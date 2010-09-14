@@ -4,10 +4,8 @@
  */
 package spendii.date
 
-
-import spendii.Spimplicits.dayToDayMonth
 import spendii.util.ScalaTestSuite
-import SomeDay._
+import Sdate._
 import Month._
 import spendii.util.IfSomeElseNone._
 

@@ -4,7 +4,7 @@
  */
 package spendii.boundary
 
-import spendii.date.SomeDay._
+import spendii.date.Sdate._
 import spendii.date.{Sdate, SdateRange}
 import spendii.persist.DailySpendDao.{UserDateRange, DailySpendByUser, UserDate}
 import spendii.{Spendtry, DailySpend}

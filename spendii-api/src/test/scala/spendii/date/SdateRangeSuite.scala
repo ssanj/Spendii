@@ -5,7 +5,7 @@
 package spendii.date
 
 import spendii.util.ScalaTestSuite
-import SomeDay._
+import Sdate._
 
 final class SdateRangeSuite extends ScalaTestSuite {
 

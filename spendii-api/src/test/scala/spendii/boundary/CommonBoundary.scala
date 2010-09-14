@@ -6,7 +6,7 @@ package spendii.boundary
 
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.FunSuite
-import spendii.date.SomeDay._
+import spendii.date.Sdate._
 import spendii.persist.DailySpendDao.{UserDate, DailySpendByUser}
 import spendii.Spimplicits._
 import spendii._

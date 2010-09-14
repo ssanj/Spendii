@@ -4,7 +4,7 @@
  */
 package spendii
 
-import spendii.date.SomeDay.today
+import spendii.date.Sdate.today
 import date.Sdate
 
 case class User(username:String, password:String, creationDate:Sdate = today)

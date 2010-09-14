@@ -14,31 +14,37 @@ import Sdate._
  * Models a date on which spending occurs (which is any day really!) The {@code java.util.Calendar} class has be semi-wrapped for the
  * functionality of this class.
  */
-trait Sdate extends Ordered[Sdate] {
+final class Sdate private(f:(Cal) => Cal) extends Ordered[Sdate] {
 
   /**
    * {@code Calendar} instance with its time component initialized.
    */
-  protected[date] val cal:Cal =  {
-    val c = Cal.getInstance
-    removeTime(c)
-    c
-  }
+  private val cal:Cal = f(removeTime(Cal.getInstance))
 
   /**
-   * The date (minus time-component) as time in milliseconds.
+   * The date, as time in milliseconds.
    */
-  protected val time:Long
+  private val time:Long = cal.getTimeInMillis
 
   /**
    * Removes the time-component (hh:mm:ss:ms) of a {@code java.util.Calendar} instance.
    */
-  private def removeTime(cal:Cal) {
+  private def removeTime(cal:Cal): Cal = {
     cal.set(HOUR, 0)
     cal.set(MINUTE, 0)
     cal.set(SECOND, 0)
     cal.set(MILLISECOND, 0)
+    cal
   }
+  
+  private def getDays(timePeriod:Long): Int =  (timePeriod / MILS_IN_A_DAY).toInt
+  
+  private def alterDays(days:Int, f:(Int, Int) => Int) = 
+    (newCal:Cal) => {
+      this.->>(newCal)
+      newCal.set(DAY_OF_MONTH, f(cal.get(DAY_OF_MONTH), days))
+      newCal
+    }          
 
   /**
    * Returns a {@code Date} representation of this Sdate.
@@ -48,13 +54,14 @@ trait Sdate extends Ordered[Sdate] {
   /**
    * Removes the supplied number of days from the this Sdate and returns a new Sdate in the past relative to this date.
    */
-  def -(days:Int) : Sdate
-
+  def -(days:Int): Sdate = new Sdate(alterDays(days, _ - _))
+  
+  
   /**
    * Adds the supplied number of days to the this Sdate and returns a new Sdate in the future relative to this date.
    */
-  def +(days:Int) : Sdate
-
+  def +(days:Int): Sdate = new Sdate(alterDays(days, _ + _))
+  
   /**
    * Returns the number of days between this date and the other date inclusive.
    * If the other date is the same date as this the value should be 1.
@@ -95,10 +102,35 @@ trait Sdate extends Ordered[Sdate] {
 }
 
 object Sdate {
+    
+  def today: Sdate = new Sdate(cal => cal)
 
-  private val MILS_IN_A_DAY:Long = 86400000
+  def yesterday: Sdate =  (today - 1)
+  
+  def apply(day:Int, month:Month, year:Int): Sdate = {
+    new Sdate(newCal => {
+      newCal.set(DAY_OF_MONTH, day)
+      newCal.set(MONTH, month.month)
+      newCal.set(YEAR, year)
+      newCal
+    })
+  }  
+  
+  case class DayMonth(day:Int) { def |(month:Month): MonthYear = MonthYear(day, month) }
 
-  private def getDays(timePeriod: Long) : Int =  (timePeriod / MILS_IN_A_DAY).toInt
-
+  case class MonthYear(day:Int, month:Month) { def |(year:Int): Sdate = Sdate(day, month, year) }
+ 
+  /**
+   * Converts an Int -> DayMonth -> Sdate.
+   * Eg. 10 | january | 2010 -> Sdate
+   */  
+  implicit def dayToDayMonth(day:Int): DayMonth =  DayMonth(day)  
+  
+ /**
+  * Converts an Sdate to a RichSdate  to a SdateRange.
+  * Eg. Sdate1 to Sdate2, Sdate1 until Sdate2.
+  */
   implicit def sDateToRichSdate(startDate:Sdate) : RichSdate = new RichSdate(startDate)
+    
+  private val MILS_IN_A_DAY:Long = 86400000
 }

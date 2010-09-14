@@ -5,8 +5,7 @@
 package spendii.date
 
 import spendii.util.ScalaTestSuite
-import spendii.Spimplicits.dayToDayMonth
-import SomeDay._
+import Sdate._
 import Month._
 
 final class RichSdateSuite extends ScalaTestSuite {
