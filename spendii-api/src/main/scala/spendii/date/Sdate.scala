@@ -9,7 +9,7 @@ import java.util.{Calendar => Cal, Date}
 import Cal._
 import scala.Math.signum
 import Sdate._
-
+import Month.getMonth
 /**
  * Models a date on which spending occurs (which is any day really!) The {@code java.util.Calendar} class has be semi-wrapped for the
  * functionality of this class.
@@ -110,7 +110,7 @@ object Sdate {
   def apply(day:Int, month:Month, year:Int): Sdate = {
     new Sdate(newCal => {
       newCal.set(DAY_OF_MONTH, day)
-      newCal.set(MONTH, month.month)
+      newCal.set(MONTH, getMonth(month))
       newCal.set(YEAR, year)
       newCal
     })

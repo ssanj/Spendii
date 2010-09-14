@@ -9,7 +9,7 @@ import java.util.{Calendar => Cal}
 /**
  * Defines a month in a date as its own type.
  */
-sealed abstract class Month(private[date] val month:Int)
+sealed abstract class Month(private val month:Int)
 
 final case object January extends Month(Cal.JANUARY)
 final case object February extends Month(Cal.FEBRUARY)
@@ -39,7 +39,7 @@ object Month {
   def november = November
   def december = December
 
-  def getMonth(month:Int) : Option[Month] = {
+  def getMonth(month:Int): Option[Month] = {
     month match {
       case Cal.JANUARY => Some(january)
       case Cal.FEBRUARY => Some(february)
@@ -56,4 +56,6 @@ object Month {
       case _ => None
     }
   }
+  
+  def getMonth(month:Month): Int = month.month
 }
