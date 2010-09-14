@@ -8,7 +8,7 @@ import spendii.util.ScalaTestSuite
 import Month._
 import Sdate._
 
-final class SomeDayWithFollowingDaysSuite extends ScalaTestSuite {
+final class SdateDayWithFollowingDaysSuite extends ScalaTestSuite {
 
   test("Sdate should add days within a month") {
     (25|november|2009) + 5 should equal (30|november|2009)

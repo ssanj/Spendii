@@ -7,7 +7,7 @@ package spendii.date
 import spendii.util.ScalaTestSuite
 import Sdate._
 
-final class SomeDayWithOrderedSuite extends ScalaTestSuite {
+final class SdateDayWithOrderedSuite extends ScalaTestSuite {
 
   test("Sdate should order ealier days first") { (yesterday compare today) should equal (-1) }
 

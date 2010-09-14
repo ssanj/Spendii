@@ -8,7 +8,7 @@ import spendii.util.ScalaTestSuite
 import Month._
 import Sdate._
 
-final class SomeDayWithPreviousDaysSuite extends ScalaTestSuite {
+final class SdateDayWithPreviousDaysSuite extends ScalaTestSuite {
 
   test("Sdate should reduce days within a month") {
     (24|november|2000) - 4 should equal (20|november|2000)

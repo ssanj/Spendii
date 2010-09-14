@@ -10,7 +10,7 @@ import spendii.util.ScalaTestSuite
 import Month._
 import Sdate._
 
-final class SomeDaySuite extends ScalaTestSuite {
+final class SdateDaySuite extends ScalaTestSuite {
 
   test("Sdate should have a formatted toString representation") {
    (25|december|2008).toString should equal ("Thursday 25 December 2008")
