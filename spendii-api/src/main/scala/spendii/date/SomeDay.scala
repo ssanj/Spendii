@@ -24,9 +24,9 @@ final class SomeDay(dateFunc:(Cal) => Unit) extends Sdate {
 
 object SomeDay {
 
-  def today: SomeDay = new SomeDay((Cal) => {})
+  def today: Sdate = new SomeDay((Cal) => {})
 
-  def yesterday: SomeDay =  (today - 1).asInstanceOf[SomeDay]
+  def yesterday: Sdate =  (today - 1)
 
   def apply(day:Int, month:Month, year:Int): SomeDay = {
     new SomeDay(createDate(day, month, year))
