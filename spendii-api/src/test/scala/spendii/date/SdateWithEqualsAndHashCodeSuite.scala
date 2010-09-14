@@ -8,7 +8,7 @@ import spendii.util.ScalaTestSuite
 import spendii.util.EqualsAndHashCodeConstraints.{HashCodeConstraints, EqualsConstraints}
 import Month._
 
-final class SomeDayWithEqualsAndHashCodeSuite extends ScalaTestSuite with EqualsConstraints[Sdate] with HashCodeConstraints[Sdate] {
+final class SdateWithEqualsAndHashCodeSuite extends ScalaTestSuite with EqualsConstraints[Sdate] with HashCodeConstraints[Sdate] {
 
   override def objectName = "Sdate"
 
