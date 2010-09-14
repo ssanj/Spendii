@@ -7,7 +7,7 @@ package spendii.persist.memory
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.FunSuite
 import spendii.persist.DailySpendDao.UserDate
-import spendii.date.SomeDay._
+import spendii.date.Sdate._
 
 final class UserDateSuite extends FunSuite with ShouldMatchers {
 

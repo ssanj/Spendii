@@ -11,6 +11,7 @@ import spendii.persist.{DailySpendDao}
 import spendii.persist.DailySpendDao.{UserDate}
 import spendii.Spimplicits._
 import spendii._
+import spendii.date.Sdate._
 
 trait InMemDBLabelDaoCommon extends FunSuite with ShouldMatchers with BeforeAndAfterEach{
 

@@ -6,12 +6,11 @@ package spendii.persist.memory
 
 import org.scalatest.{FunSuite, BeforeAndAfterEach}
 import org.scalatest.matchers.ShouldMatchers
-import spendii.date.Month.{july, august, september}
-import spendii.Spimplicits.dayToDayMonth
+import spendii.date.Month._
 import spendii.persist.{UserDao, LabelDao, DailySpendDao}
 import spendii.persist.DailySpendDao.{UserDate}
-import spendii.Spimplicits._
 import spendii._
+import spendii.date.Sdate._
 
 trait InMemDBDailySpendDaoCommon extends FunSuite with ShouldMatchers with BeforeAndAfterEach {
   val dao = InMemDB
@@ -26,7 +25,8 @@ trait InMemDBDailySpendDaoCommon extends FunSuite with ShouldMatchers with Befor
 
   override def afterEach() {dao.clearAll}
 
-  object TestData {
+  object TestData {   
+   
     val LABEL_1 = "lunch"
     val LABEL_2 = "parking"
     val LABEL_3 = "bfpg"

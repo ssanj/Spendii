@@ -4,7 +4,6 @@
  */
 package spendii
 
-//import date.SomeDay.DayMonth
 //import date.{RichSdate, Sdate}
 
 /**
@@ -12,9 +11,4 @@ package spendii
  */
 object Spimplicits {
   
-  /**
-   * Converts an Int -> DayMonth -> Sdate.
-   * Eg. 10 | january | 2010 -> Sdate
-   */
- // implicit def dayToDayMonth(day:Int) : DayMonth =  DayMonth(day)
 }

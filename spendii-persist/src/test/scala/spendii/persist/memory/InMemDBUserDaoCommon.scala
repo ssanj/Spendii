@@ -6,10 +6,9 @@ package spendii.persist.memory
 
 import org.scalatest.{FunSuite, BeforeAndAfterEach}
 import org.scalatest.matchers.ShouldMatchers
-import spendii.date.SomeDay.today
 import spendii.persist.DailySpendDao.{UserDate}
-import spendii.Spimplicits._
 import spendii.{Spendtry, User}
+import spendii.date.Sdate._
 
 trait InMemDBUserDaoCommon extends FunSuite with ShouldMatchers with BeforeAndAfterEach {
 
