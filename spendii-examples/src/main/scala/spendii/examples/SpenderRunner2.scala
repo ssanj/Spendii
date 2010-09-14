@@ -5,9 +5,9 @@
 package spendii.examples
 
 import spendii.date.Month._
+import spendii.date.Sdate._
 import spendii.boundary.{SpenderService}
 import SpenderService._
-import spendii.Spimplicits._
 import spendii.persist.memory.{MemoryDB, InMemLabelDao, InMemDailySpendDao, InMemUserDao}
 import spendii._
 

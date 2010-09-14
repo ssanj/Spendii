@@ -5,14 +5,13 @@
 package spendii.examples
 
 import spendii.date.Month._
+import spendii.date.Sdate._
 import org.scalatest.matchers.ShouldMatchers
 import spendii.persist.memory.MemoryDB
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
 import spendii.boundary.{SpenderService}
 import spendii.boundary.SpenderService._
-import spendii.Spimplicits.dayToDayMonth
 import spendii.{User, Spendtry, DailySpend}
-import spendii.Spimplicits._
 import spendii.Spendtry
 
 final class SpenderExamplesSuite extends FunSuite with ShouldMatchers with BeforeAndAfterEach {
